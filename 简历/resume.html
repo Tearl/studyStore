@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style_2.css">
+    <link rel="stylesheet" href="css/style_2.css" id="link1">
 </head>
 <body>
+    <div>切换页面样式
+        <button onclick="show1(1)" id="btn1">style1</button>
+        <button id="btn1" onclick="show1(2)">style2</button>
+        <button id="btn1" onclick="show1(3)">style3</button>
+    </div>
     <div class="content">
         <div class="leftPa">
             <h1>简历</h1>
@@ -79,5 +84,29 @@
         </div>
         <div class="clearF"></div>
     </div>
+
+    <script>
+        function show1 (a) {
+            // alert(111)
+            // oLink.href = '../style_1.css';
+            var path = 'css/style_'+ a + '.css'
+            if (!path || path.length === 0) {
+                throw new Error('argument "path" is required !');
+            } else {
+                // head.removeChild(link)
+                var el = document.getElementById('link1');
+                el.parentNode.removeChild(el);
+                var head = document.getElementsByTagName('head')[0];
+                var link = document.createElement('link');
+                link.href = path;
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.id = 'link1';
+                head.appendChild(link);
+            }
+        }
+        
+        // oLink.href = '../../aaa.css';   //这样就把link的链接修改为'../../aaa.css'了。
+    </script>
 </body>
 </html>
