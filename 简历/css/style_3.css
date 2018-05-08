@@ -1,0 +1,22 @@
+h1, h2, h3, h4, h5, h6, p{
+    padding: 0;
+    margin: 0;
+}
+h1{
+    background-color: #848484;
+}
+.style3{
+    display: flex;
+    border-bottom: 1px solid #d6d6d6;
+    height: 80px;
+}
+.style3 .greColor{
+    background-color: #d6d6d6;
+    border-bottom: 1px solid #fff;
+}
+.b{
+    display: flex;
+}
+h2{
+    line-height: 80px;
+}
